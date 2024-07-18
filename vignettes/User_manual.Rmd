@@ -705,6 +705,35 @@ dummy_k5_pam$tree|
 
 
 
+# Adding custom visuals: cell-cell communication 
+
+```{r, fig.width=6, fig.height=4, fig.align='center'}
+# e.g. matrix from CellChat
+cc_mat <- matrix(data = runif(n = 25, min = 0, max = 0.5),
+                 nrow = 5, ncol = 5)
+colnames(cc_mat) <- 0:4
+rownames(cc_mat) <- 0:4
+diag(cc_mat) <- 1
+
+cc <- reshape2::melt(cc_mat)
+cc$Var1 <- factor(x = cc$Var1, levels = rev(l$tree_meta$label))
+cc$Var2 <- factor(x = cc$Var2, levels = rev(l$tree_meta$label))
+colnames(cc) <- c("x", "y", "cc")
+
+g_cc <- ggplot()+
+  geom_tile(data = cc, aes(x = x, y = y, fill = cc), col = "white")+
+  scale_fill_distiller(palette = "Spectral")+
+  xlab(label = "Cluster x")+
+  ylab(label = "Cluster y")
+```
+
+
+```{r, fig.width=6, fig.height=4, fig.align='center'}
+l$tree|g_cc
+```
+
+
+
 # Summary
 
 `r Biocpkg("scBubbletree")` promotes simple and transparent visual exploration 
