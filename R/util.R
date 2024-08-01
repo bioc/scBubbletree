@@ -78,7 +78,9 @@ get_tree <- function(pd,
     main_ph <- unroot(phy = main_ph)
     
     # get branch support
-    ph <- get_ph_support(main_ph = main_ph, x = pd$p_dist)
+    ph <- get_ph_support(main_ph = main_ph, 
+                         x = pd$p_dist,
+                         hclust_method = hclust_method)
     
     # build bubbletree
     t <- get_dendrogram(ph = ph$main_ph,
@@ -91,7 +93,7 @@ get_tree <- function(pd,
 }
 
 
-get_ph_support <- function(main_ph, x) {
+get_ph_support <- function(main_ph, x, hclust_method) {
   # if B=0, then no support values will be provided
   if(is.data.frame(x)==FALSE) {
     return(list(main_ph = main_ph, boot_ph = NA))
@@ -102,7 +104,7 @@ get_ph_support <- function(main_ph, x) {
     d <- acast(data = x[x$B == i,], formula = c_i~c_j, value.var = "M")
     d <- stats::as.dist(d)
     
-    hc <- hclust(d, method = "average")
+    hc <- hclust(d, method = hclust_method)
     ph <- as.phylo(x = hc)
     ph <- unroot(phy = ph)
     
@@ -189,6 +191,10 @@ get_dendrogram <- function(ph,
   tree <- tree+
     scale_radius(range = c(1, 4), limits = c(0, max(km_meta$Cells)))+
     guides(size = guide_legend(title = "Cells", nrow = 2, byrow = TRUE))
+  
+  
+  tree <- tree + scale_x_continuous(labels = abs)
+  tree <- revts(tree)
   
   # merge order of tips in the tree with metadata
   q <- tree$data
