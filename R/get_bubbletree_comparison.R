@@ -52,7 +52,8 @@ compare_bubbletrees <- function(btd_1,
   jm <- c()
   for(c1 in unique(btd_1$cluster)) {
     for(c2 in unique(btd_2$cluster)) {
-      j <- get_JD(a = which(btd_1$cluster==c1), b = which(btd_2$cluster==c2))
+      j <- get_JD(a = which(btd_1$cluster==c1), 
+                  b = which(btd_2$cluster==c2))
       j$btd_1 <- c1
       j$btd_2 <- c2
       jm <- rbind(jm, j)
