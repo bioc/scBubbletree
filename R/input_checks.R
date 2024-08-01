@@ -666,6 +666,9 @@ check_tile_bw <- function(tile_bw) {
   }
 }
 
+
+
+
 check_f <- function(f, btd) {
   # check f
   if(missing(f)){
