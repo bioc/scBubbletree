@@ -728,9 +728,29 @@ g_cc <- ggplot()+
 ```
 
 
-```{r, fig.width=6, fig.height=4, fig.align='center'}
+```{r, fig.width=6, fig.height=3, fig.align='center'}
 l$tree|g_cc
 ```
+
+# Visualizing features of individual cells
+
+```{r, fig.width=6, fig.height=2.5}
+
+g_cell_feature_1 <- get_num_cell_tiles(btd = l,
+                   f = e[,1],
+                   tile_bw = FALSE,
+                   x_axis_name = "ALDH1A1 gene expr.",
+                   rotate_x_axis_labels = FALSE)
+
+g_cell_feature_2 <- get_num_cell_tiles(btd = l,
+                   f = e[,2],
+                   tile_bw = FALSE,
+                   x_axis_name = "SLPI gene expr.",
+                   rotate_x_axis_labels = FALSE)
+
+l$tree|g_cell_feature_1$plot|g_cell_feature_2$plot
+```
+
 
 
 

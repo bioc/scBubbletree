@@ -690,6 +690,31 @@ check_f <- function(f, btd) {
   }
 }
 
+
+
+check_f_num <- function(f, btd) {
+  # check f
+  if(missing(f)){
+    stop("f input not found")
+  }
+  if(is.numeric(f)==FALSE) {
+    stop("f must be a numeric vector")
+  }
+  if(is.vector(f)==FALSE) {
+    stop("f must be a numeric vector")
+  }
+  if(length(f)!=length(btd$cluster)) {
+    stop("length of f is not equal to number of cells in btd")
+  }
+  if(any(is.na(f))|
+     any(is.null(f))|
+     any(is.infinite(f))) {
+    stop("f must be a numeric vector")
+  }
+}
+
+
+
 check_integrate_vertical <- function(integrate_vertical) {
   # check integrate_vertical
   if(missing(integrate_vertical)==TRUE) {
