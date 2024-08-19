@@ -596,6 +596,21 @@ check_x_axis_name <- function(x_axis_name) {
   }
 }
 
+check_feature_name <- function(feature_name) {
+  
+  # check feature_name
+  if(missing(feature_name)==TRUE) {
+    stop("feature_name input not found")
+  }
+  # check feature_name
+  if(is.character(feature_name)==FALSE) {
+    stop("feature_name must be a character string")
+  }
+  if(length(feature_name)!=1) {
+    stop("feature_name must be a character string")
+  }
+}
+
 check_rotate_x_axis_labels <- function(rotate_x_axis_labels) {
   # rotate_x_axis_labels
   if(missing(rotate_x_axis_labels)) {
