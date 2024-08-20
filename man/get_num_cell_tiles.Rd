@@ -67,7 +67,7 @@ This function does the following procedure for each bubble:
 # input data
 data("d_500", package = "scBubbletree")
 A <- d_500$A
-fs <- as.vector(d_500$fs[,1])
+f <- as.vector(d_500$fs[,1])
 
 b <- get_bubbletree_kmeans(x = A, k = 8)
 
