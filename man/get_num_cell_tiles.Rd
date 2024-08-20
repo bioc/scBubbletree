@@ -1,17 +1,10 @@
 \name{get_num_cell_tiles}
 
-
-
 \alias{get_num_cell_tiles}
-
-
-
 
 \title{
 Visualization of numeric features of individual cells using tile plots
 }
-
-
 
 \description{
 \code{get_num_cell_tiles} creates one heatmap from the cells in each bubble.
@@ -19,13 +12,12 @@ The heatmap visualizes a gradient of the sorted (from high to low) values of
 a numeric feature (e.g. expression of a certain gene) among the cells of that
 bubble.}
 
-
-
 \usage{
 get_num_cell_tiles(btd,
                    f,
                    tile_bw = FALSE,
-                   x_axis_name = "Feature",
+                   x_axis_name = "cells",
+                   feature_name = "Feature",
                    rotate_x_axis_labels = TRUE)
 }
 
@@ -33,6 +25,7 @@ get_num_cell_tiles(btd,
 \item{btd}{bubbletree object}
 \item{f}{numeric vector, numeric cell feature}
 \item{x_axis_name}{character, x-axis title}
+\item{feature_name}{character, color legend title}
 \item{rotate_x_axis_labels}{logical, should the x-axis labels be shown
 horizontally (\code{rotate_x_axis_labels}  = FALSE) or vertically
 (\code{rotate_x_axis_labels} = TRUE)}
@@ -78,11 +71,7 @@ fs <- as.vector(d_500$fs[,1])
 
 b <- get_bubbletree_kmeans(x = A, k = 8)
 
-g <- get_num_cell_tiles(btd = b,
-                        f = f,
-                        tile_bw = TRUE,
-                        x_axis_name = "Gene expression",
-                        rotate_x_axis_labels = TRUE)
+g <- get_num_cell_tiles(btd = b, f = f)
 
 b$tree|g$plot
 }
