@@ -40,3 +40,8 @@ Changes in version 1.7.2 (5 Jun, 2024)
 + bubbletree comparison function get_bubbletree_comparison
 + main functions simplified and defaults changed
 + documentation updated
+
+Changes in version 1.7.21 (3 Sep, 2024)
++ new abstract
++ new vignette
++ new function: get_num_cell_tiles
