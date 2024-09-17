@@ -7,15 +7,15 @@ Authors@R:
            family = "Kitanovski",
            role = c("aut", "cre"),
            email = "simokitanovski@gmail.com")
-Description: scBubbletree is a scalable and quantitative method for 
-  the visual exploration of scRNA-seq data that preserves biologically 
-  meaningful properties, including local and global cell distances and 
-  cell density distributions across samples. It effectively addresses 
-  overplotting issues and enables the visualization of diverse cell 
-  attributes derived from multiomic single-cell experiments. Furthermore, 
-  scBubbletree is user-friendly and easily integrates with popular 
-  scRNA-seq data analysis approaches, facilitating comprehensive and 
-  intuitive data interpretation.
+Description: scBubbletree is a quantitative method for the visual 
+    exploration of scRNA-seq data, preserving key biological 
+    properties such as local and global cell distances and cell 
+    density distributions across samples. It effectively resolves 
+    overplotting and enables the visualization of diverse cell 
+    attributes from multiomic single-cell experiments. Additionally, 
+    scBubbletree is user-friendly and integrates seamlessly with 
+    popular scRNA-seq analysis tools, facilitating comprehensive 
+    and intuitive data interpretation.
 License: GPL-3 + file LICENSE
 Depends: 
     R (>= 4.2.0)
