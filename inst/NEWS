@@ -45,3 +45,6 @@ Changes in version 1.7.21 (3 Sep, 2024)
 + new abstract
 + new vignette
 + new function: get_num_cell_tiles
+
+Changes after version 1.71.21 (17 Sep, 2024)
++ scBubbletree paper accepted in BMC bioinformatics
