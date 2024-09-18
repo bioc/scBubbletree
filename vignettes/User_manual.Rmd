@@ -23,7 +23,7 @@ of various cell types across tissues. The rapid growth of scRNA-seq data has
 also created an unique set of challenges, for instance, there is a pressing 
 need for scalable approaches for scRNA-seq data visualization.
 
-This vignette introduces `r Biocpkg("scBubbletree")`, a transparent workflow 
+This vignette introduces `r Biocpkg("scBubbletree")`[^4], a transparent workflow 
 for quantitative exploration of single cell RNA-seq data. 
 
 In short, the algorithm of `r Biocpkg("scBubbletree")` performs clustering 
@@ -771,7 +771,7 @@ which are described by the bubbletree.
 [^2]: https://github.com/LuyiTian/sc_mixology/blob/master/data/
 sincell_with_class_5cl.RData
 [^3]: https://doi.org/10.1101/2023.03.09.531263
-
+[^4]: https://doi.org/10.1186/s12859-024-05927-y
 
 # Session Info
 
