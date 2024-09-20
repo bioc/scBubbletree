@@ -53,7 +53,7 @@ from five human lung adenocarcinoma cell lines (HCC827, H1975, A549, H838 and
 H2228). The dataset is available here[^2].
   
 The library has been prepared with 10x Chromium platform and sequenced with 
-Illumina NextSeq 500 platform. Raw data has been processed with Cellranger. 
+Illumina NextSeq 500 platform. Raw data has been processed with cellranger. 
 The tool demuxlet has been used to predict the identity of each cell based on 
 known genetic differences between the different cell lines. 
 
@@ -320,8 +320,6 @@ ggplot(data = b_k$gap_stats_summary)+
   ylab(label = "Gap")+
   geom_vline(xintercept = 5, col = "gray", linetype = "dashed")
 ```
-
-
 
 
 

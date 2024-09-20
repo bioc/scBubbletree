@@ -48,3 +48,6 @@ Changes in version 1.7.21 (3 Sep, 2024)
 
 Changes after version 1.71.21 (17 Sep, 2024)
 + scBubbletree paper accepted in BMC bioinformatics
+
+Changes after version 1.71.22 (20 Sep, 2024)
++ simplified tree visualizations added in outout as object: tree_simple

@@ -174,6 +174,22 @@ get_dendrogram <- function(ph,
                 legend.spacing.x = unit(0.2, 'cm'),
                 legend.spacing.y = unit(0, 'cm'))
   
+  
+  # build simple tree
+  tree_simple <- ggtree(ph, linetype='solid')%<+%km_meta+
+    geom_point2(mapping = aes(subset=isTip==FALSE),size = 0.5, col = "black")+
+    layout_rectangular()+
+    geom_tippoint(aes(size = Cells),fill = "white", shape = 21)+
+    geom_tiplab(aes(label=label), color = 'black', size = 2.75, 
+                hjust = -1.5, align = TRUE)+
+    theme_bw(base_size = 10)+
+    theme_tree2(plot.margin=margin(6,30,6,6),
+                legend.position = "top",
+                legend.margin=margin(0,0,0,0),
+                legend.box.margin=margin(-10,-10,-10,-10),
+                legend.spacing.x = unit(0.2, 'cm'),
+                legend.spacing.y = unit(0, 'cm'))
+  
   if(show_simple_count) {
     tree <- tree+
       geom_tiplab(aes(label=lab_short),
@@ -204,7 +220,7 @@ get_dendrogram <- function(ph,
   km_meta <- merge(x = km_meta, y = tips, by = "label")
   km_meta <- km_meta[order(km_meta$tree_order, decreasing = TRUE), ]
   
-  return(list(tree = tree, tree_meta = km_meta))
+  return(list(tree = tree, tree_simple = tree_simple, tree_meta = km_meta))
 }
 
 

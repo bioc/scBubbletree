@@ -74,10 +74,14 @@ the documentation of the respective functions.
 \item{k}{number of clusters}
 \item{km}{NULL}
 \item{ph}{boot_ph: bootstrap dendrograms \eqn{H_b}; main_ph: bubbletree \eqn{H}}
+\item{ph_data}{two phlogenies: ph_c = phylogenity constructed from bubble 
+centroids (computed from \eqn{A^{n\times f}}); ph_p = main_ph = phylogeny 
+constructed from intercell distances}
 \item{pair_dist}{inter-cluster distances used to generate the dendrograms}
 \item{cluster}{cluster assignments of each cell}
 \item{input_par}{list of all input parameters}
 \item{tree}{ggtree bubbletree object}
+\item{tree_simple}{simplified ggtree bubbletree object}
 \item{tree_meta}{meta-data associated with the bubbletree}
 }
 

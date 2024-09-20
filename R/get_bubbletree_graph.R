@@ -96,6 +96,7 @@ get_bubbletree_graph <- function(x,
                         cluster = cs,
                         input_par = input_par,
                         tree = t$tree,
+                        tree_simple = t$tree_simple,
                         tree_meta = t$tree_meta)))
 }
 

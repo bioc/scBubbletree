@@ -81,6 +81,7 @@ get_bubbletree_kmeans <- function(x,
                         cluster = km$cluster,
                         input_par = input_par,
                         tree = t$tree,
+                        tree_simple = t$tree_simple,
                         tree_meta = t$tree_meta)))
 }
 
