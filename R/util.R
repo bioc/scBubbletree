@@ -184,11 +184,9 @@ get_dendrogram <- function(ph,
                 hjust = -1.5, align = TRUE)+
     theme_bw(base_size = 10)+
     theme_tree2(plot.margin=margin(6,30,6,6),
-                legend.position = "top",
+                legend.position = "none",
                 legend.margin=margin(0,0,0,0),
-                legend.box.margin=margin(-10,-10,-10,-10),
-                legend.spacing.x = unit(0.2, 'cm'),
-                legend.spacing.y = unit(0, 'cm'))
+                legend.box.margin=margin(-10,-10,-10,-10))
   
   if(show_simple_count) {
     tree <- tree+
