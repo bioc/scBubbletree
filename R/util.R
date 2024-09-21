@@ -180,8 +180,7 @@ get_dendrogram <- function(ph,
     geom_point2(mapping = aes(subset=isTip==FALSE),size = 0.5, col = "black")+
     layout_rectangular()+
     geom_tippoint(aes(size = Cells),fill = "white", shape = 21)+
-    geom_tiplab(aes(label=label), color = 'black', size = 2.75, 
-                hjust = -1.5, align = TRUE)+
+    geom_tiplab(aes(label=label), color = 'black', hjust = -1.5, as_ylab = T)+
     theme_bw(base_size = 10)+
     theme_tree2(plot.margin=margin(6,30,6,6),
                 legend.position = "none",
